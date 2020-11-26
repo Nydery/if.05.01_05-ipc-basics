@@ -1,7 +1,5 @@
 # 1) Race Condition
 
--------------------------------
-
 ## Description:
 A race condition is considered a situation where, for example, two processes/threads want to access a shared variable at the same time. In this situation you are most likely to lose some information, due to the fact that those two processes can't run 100% parallel. Or in other words, both processes would write to the same address, which would result in a loss of data. **This example only applies to SINGLE-CORE processors.**
 
@@ -9,15 +7,11 @@ A race condition is considered a situation where, for example, two processes/thr
 
 # 2) Disabling interrupts
 
----------------------------
-
 1) The reason why interrupts **DO NOT** work on multi-core machines is that, as it already says, it has multiple cores. All of those cores can run in parallel without any problems. When you disable interrupts with your application, you only disable them on the core it is running on right now. Therefore, any other application running on a different core, can still access the shared resource. 
 
 2) It can be **VERY DANGEROUS** to give the user the power to disable interrupts, because if the user somehow forgets to enable the interrupts again, the PC is useless. The scheduler can't interrupt and therefore no other application or service (keyboard input, background services, and so on ...) can run. That way you can't even shutdown the PC, because that is done with an executable file as well. 
 
 # 3) Peterson's Solution
-
-------------------------------
 
 ## Implementation
 
