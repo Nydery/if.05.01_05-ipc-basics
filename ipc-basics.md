@@ -104,6 +104,3 @@ void leave_region(int process){
 	interested[process] = false;
 }
 ```
-
-
-
