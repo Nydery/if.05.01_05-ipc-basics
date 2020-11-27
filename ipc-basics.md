@@ -33,7 +33,9 @@ void leave_region(int process){
 
 
 
-## 1) First scenario: 
+## 1) Working scenarios
+
+### First scenario: 
 
 1) Process 0 calls enter_region(), finishes it and is within the critical region. 
 
@@ -49,7 +51,7 @@ void leave_region(int process){
 
 
 
-## 2) Second scenario
+### Second scenario
 
 1) Process 0 calls enter_region() and gets interrupted before it is finished executing the while loop.
 
@@ -64,6 +66,8 @@ void leave_region(int process){
 **Now the array interested looks like this [true, true] and loser is equal to 1. Process 0 enters the critical region.**
 
 
+## 2) Failing scenario
+The problem with the strict alternation "solution" is that every single process can't access the critical region twice in a row, because the solution is like a queue. So, when one process enters and leaves the critical region in one "process time" it can't access it directly again. 
 
 
 ## 3) Meaning of loser variable
