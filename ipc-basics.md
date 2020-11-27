@@ -63,7 +63,6 @@ void leave_region(int process){
 
 **Now the array interested looks like this [true, true] and loser is equal to 1. Process 0 enters the critical region.**
 
-....
 
 
 
